@@ -1,8 +1,6 @@
-cmake_minimum_required(VERSION 2.4)
+cmake_minimum_required(VERSION 3.10)
 project(splines-lib)
 
-file(GLOB SOURCES
-    "*.h"
-    "*.cpp")
-include_directories(.)
-add_library(splines-lib STATIC ${SOURCES})
+add_library(splines-lib STATIC ${CMAKE_CURRENT_SOURCE_DIR}/Splines.cpp)
+
+target_include_directories(splines-lib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
